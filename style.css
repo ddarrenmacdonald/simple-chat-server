@@ -32,16 +32,18 @@ body {
     overflow:auto; }
 
 #msgArea {
-	margin: 10px 0 10px 0;
+	width: 85%;
+    margin: 0 auto;
 	border-radius: 40px;}
 
 #m {
-	margin: auto 0 auto 12px; 
-	padding: 10px 0 10px 0
-	border-radius: 40px;
+	margin: 0 auto;
+	padding: 5px 0 5px 0;
+	border-radius: 20px;
 	text-align:left;}
 
 #myweb {
+	padding: 5px 5px 5px 5px;
 	text-align: center;
 	color: white;
 	text-decoration: none;}
