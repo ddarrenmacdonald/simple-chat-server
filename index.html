@@ -1,24 +1,40 @@
 <!doctype html>
 <html>
   <head>
-    <title>Socket.IO chat</title>
-    <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-      #messages { list-style-type: none; margin: 0; padding: 0; }
-      #messages li { padding: 5px 10px; }
-      #messages li:nth-child(odd) { background: #eee; }
-    </style>
+    <title>ergoChat by darrenmacdonald.ca</title>
+        <link type="text/css" rel="stylesheet" href="style.css"/>
   </head>
+
+<!-- Body info -->
   <body>
+
+<!-- This is the container for my chat box -->
+    <div id="wrapper">
+<!-- This is my header -->
+      <div id="chat_header">
+        <h2>ergoChat</h2>     
+      </div> 
+
+<!-- This is the chatbox -->
+      <div id="chatBox"></div>
+
+<!-- This is the user message area -->
+  <div id="msgArea">  
     <ul id="messages"></ul>
     <form action="">
       <input id="m" autocomplete="off" /><button>Send</button>
     </form>
-   <script src="/socket.io/socket.io.js"></script>
+  </div>
+   
+<!-- Exit to my website -->
+      <div id="myweb">
+        <a href="http://darrenmacdonald.ca">Exit Chat</a>
+      </div>
+    </div>
+
+<!-- Scripts go here!-->
+
+<script src="/socket.io/socket.io.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
   var socket = io();
@@ -28,8 +44,12 @@
     return false;
   });
   socket.on('chat message', function(msg){
-    $('#messages').append($('<li>').text(msg));
+    $('#chatBox').append($('<li>').text(msg));
   });
+
 </script>
+  
+
+
   </body>
 </html>
