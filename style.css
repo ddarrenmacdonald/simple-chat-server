@@ -25,11 +25,20 @@ body {
     margin-bottom:10px;
     padding:10px;
     background:#333333;
-    height:275px;
+    height:400px;
     width:350px;
     border:1px solid #ACD8F0;
     border-radius: 40px;
     overflow:auto; }
+
+#chat_window {
+	
+}
+
+#userInput {
+	position: bottom;
+	
+}
 
 #msgArea {
 	width: 85%;
