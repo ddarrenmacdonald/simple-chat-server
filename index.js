@@ -7,18 +7,9 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 
-/* This is the original code
-var http = require('http').Server(app);
-var io = require('socket.io')(http); */
-
 /* Added port listening */
 console.log("Listening on port " + port);
 server.listen(port);
-
-/* This is the original code 
-app.get('/', function(req, res){
-  res.sendfile('index.html'); 
-}); */
 
 // routing
 app.get('/', function (req, res) {
@@ -27,13 +18,6 @@ app.get('/', function (req, res) {
 
 // Add style sheet 
 app.use("/style.css", express.static(__dirname + '/style.css'));
-
-/*This is the original code 
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-  });
-}); */
 
 // usernames which are currently connected to the chat
 var usernames = {};
@@ -70,9 +54,3 @@ io.sockets.on('connection', function (socket) {
         socket.broadcast.emit('updatechat', 'SERVER', socket.username + ' has disconnected');
     });
 });
-
-/* This is the old code
-
-http.listen(3000, function(){
-  console.log('listening on *:3000');
-});  */
