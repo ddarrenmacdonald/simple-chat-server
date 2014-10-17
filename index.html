@@ -67,7 +67,8 @@
                 // call the server-side function 'adduser' and send one parameter (value of prompt)
                 socket.emit('adduser', prompt("What's your name?"));
         });
- 
+        
+ /* old code, that works!
         // listener, whenever the server emits 'updatechat', this updates the chat body
         socket.on('updatechat', function (username, data) {
                 $('#conversation').append('<b>'+username + ':</b> ' + data + '<br>');
@@ -99,7 +100,7 @@
                         }
                 });
         });
- 
+ */
 </script>
 
 <!-- May Need This Code
